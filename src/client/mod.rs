@@ -652,7 +652,7 @@ impl OsuRef {
         };
 
         let bytes = BodyBytes::from(body);
-        let url = "https://osu.ppy.sh/oauth/token";
+        let url = "https://takuji.nkrw.dev/oauth/token";
 
         let req = HyperRequest::builder()
             .method(Method::POST)
@@ -693,7 +693,7 @@ impl OsuRef {
             body,
         } = req;
 
-        let url = format!("https://osu.ppy.sh/api/v2/{}{}", path, query);
+        let url = format!("https://takuji.nkrw.dev/api/v2/{}{}", path, query);
         let url = Url::parse(&url).map_err(|source| OsuError::Url { source, url })?;
         debug!("URL: {}", url);
 
